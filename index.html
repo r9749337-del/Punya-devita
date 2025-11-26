@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portofolio — Devita</title>
+  <meta name="description" content="Portofolio personal [Nama Anda] — developer, designer, dll." />
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <div style="width:30px;height:30px;border-radius:10px;background:linear-gradient(135deg, pink, var(--accent));display:flex;align-items:center;justify-content:center;font-weight:800">DN</div>
+        <div>
+          <div class="brand">Devita N. Shifa</div>
+          <div class="muted" style="font-size:12px">PPLG 2</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a class="cta" href="#contact">Hire me</a>
+      </nav>
+    </header><main>
+  <section class="hero">
+    <div class="hero-card">
+      <h1>Hai — saya Devita. Ini website portofolio pertama saya, selamat membaca ya.</h1>
+      <p class="lead">Saya seorang front-end developer yang fokus pada HTML, CSS, dan JavaScript. Saya suka membuat desain yang rapi, responsif, dan mudah digunakan.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="#projects">Lihat proyek</a>
+        <a class="btn btn-ghost" href="#contact">Hubungi saya</a>
+      </div>
+
+      <div style="margin-top:18px" class="grid-3">
+        <div class="card">
+          <div style="font-weight:700">Skills</div>
+          <div class="muted" style="font-size:13px;margin-top:6px">HTML • CSS • JavaScript</div>
+        </div>
+        <div class="card">
+          <div style="font-weight:700">Experience</div>
+          <div class="muted" style="font-size:13px;margin-top:6px">Pernah mengikuti lomba calistung di SD Pernah menngikuti lomba fashion show di SMP </div>
+        </div>
+        <div class="card">
+          <div style="font-weight:700">Education</div>
+          <div class="muted" style="font-size:13px;margin-top:6px">
+            SDN 5 SINDANGKASIH •
+            
+            SMPN 8 PURWAKARTA •
+            
+            SMKN 2 PURWAKARTA</div>
+        </div>
+      </div>
+    </div>
+
+    <img src="Devita.jpg" width="300" alt="profile img">
+    
+  </section>
+
+  <section id="about">
+    <div class="card">
+      <h2>Tentang saya</h2>
+      <p class="muted">Nama saya Devita Nur Shifa. Saya adalah seorang pelajar yang selalu berusaha untuk menjadi pribadi yang lebih baik setiap hari. Saya tinggal di Indonesia bersama keluarga yang selalu mendukung saya dalam belajar dan beraktivitas.
+
+Saya dikenal sebagai orang yang ramah, dan suka membantu orang lain.Hobi saya adalah membaca dan cita cita saya ingin menjadi pengusaha yang sukses dan membahagiakan kedua orang tua saya</p>
+  </section>
+
+  <section id="projects">
+    <h2>Proyek</h2>
+    <div class="project-grid" style="margin-top:10px">
+      <article class="project">
+        <h3>Latihan Coding</h3>
+        <p class="muted"></p>
+        <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span></div>
+      </article>
+
+      <article class="project">
+        <h3>Project B — Dashboard</h3>
+        <p class="muted">Dashboard internal dengan chart dan filter dinamis.</p>
+        <div class="tags"><span class="tag">React</span><span class="tag">API</span></div>
+      </article>
+
+      <article class="project">
+        <h3>Project C — E-commerce</h3>
+        <p class="muted">Toko online sederhana dengan sistem checkout dan integrasi pembayaran.</p>
+        <div class="tags"><span class="tag">Next.js</span><span class="tag">Stripe</span></div>
+      </article>
+  </section>
+
+  <section id="contact">
+    <h2>Kontak</h2>
+    <div class="card" style="display:grid;grid-template-columns:1fr 340px;gap:18px">
+      <form onsubmit="sendMessage(event)">
+        <input id="name" placeholder="Nama" required />
+        <input id="email" type="email" placeholder="Email" required />
+        <input id="subject" placeholder="Subjek" />
+        <textarea id="message" placeholder="Tulis pesan..." required></textarea>
+        <div style="display:flex;gap:10px;justify-content:flex-end">
+          <button type="submit" class="btn btn-primary">Kirim</button>
+        </div>
+      </form>
+
+      <div>
+        <h3>Info</h3>
+        <p class="muted">Email: <a href="mailto:nurshifadevita95@gmail.com" style="color:var(--accent)">nurshifadevita95@gmail.com</a></p>
+        <p class="muted">Lokasi: Indonesia</p>
+        <p class="muted">LinkedIn • GitHub • Instagram</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="muted">© <span id="year"></span> Devita N. Shifa — All rights reserved.</div>
+</footer>
+
+  </div>  
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function sendMessage(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value.trim() || '(tanpa subjek)';
+      const message = document.getElementById('message').value.trim();
+      const body = `Halo, saya ${name}%0D%0A%0D%0A${message}%0D%0A%0D%0ASilakan balas ke: ${email}`;
+      window.location.href = `mailto:email@contoh.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+    }
+  </script>
+  </body>
+  </html>
